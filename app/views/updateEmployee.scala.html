@@ -1,0 +1,26 @@
+@(employee: Employees)
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="POST" action="@routes.EmployeesController.updateEmployee()" id="updateEmployee">
+
+    <input type="hidden" name="employeeId" value="@employee.employeeId"/><br>
+    <input type="text" name="firstName" value="@employee.firstName"/><br>
+    <input type="text" name="lastName" value="@employee.lastName"/><br>
+    <input type="text" name="title" value="@employee.title"/><br>
+    <input type="text" name="titleOfCourtesy" value="@employee.titleOfCourtesy"/><br>
+    <input type="text" name="address" value="@employee.address"/><br>
+    <input type="text" name="city" value="@employee.city"/><br>
+
+
+
+    <button>Save</button>
+
+</form>
+</body>
+</html>
+
+
