@@ -86,6 +86,8 @@ public class EmployeesController extends Controller
         Long employeeId = new Long(postedForm.get("employeeId"));
         String firstName = postedForm.get("firstName");
         String lastName = postedForm.get("lastName");
+        String nickName = postedForm.get("nickName");
+
         String title = postedForm.get("title");
         String titleOfCourtesy = postedForm.get("titleOfCourtesy");
         String address = postedForm.get("address");
@@ -101,6 +103,7 @@ public class EmployeesController extends Controller
 
         //Copy new values into model
         employee.firstName = firstName;
+        employee.nickName = nickName;
         employee.lastName = lastName;
         employee.title = title;
         employee.titleOfCourtesy = titleOfCourtesy;

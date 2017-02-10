@@ -16,6 +16,9 @@ public class Employees
     @Column(name = "lastName")
     public String lastName;
 
+    @Column(name = "nickName")
+    public String nickName;
+
     @Column(name = "title")
     public String title;
 
@@ -33,4 +36,8 @@ public class Employees
 
     @Column(name = "photo")
     public byte[] photo;
+
+    @ManyToOne(optional=true)
+    @JoinColumn(name = "reportsTo")
+    public Employees manager;
 }

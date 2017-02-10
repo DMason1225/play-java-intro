@@ -27,3 +27,16 @@ POST    /addEmployee                controllers.EmployeesController.addEmployee
 GET     /employeePicture/:id        controllers.EmployeesController.getPicture(id:Long)
 GET     /editEmployee/:id           controllers.EmployeesController.editEmployee(id:Long)
 POST    /updateEmployee             controllers.EmployeesController.updateEmployee
+
+# Products page
+GET     /products                   controllers.ProductsController.getProducts
+GET     /productList                controllers.ProductsController.index()
+GET     /newProduct                 controllers.ProductsController.newProduct
+GET     /editProduct/:id            controllers.ProductsController.editProduct(id:Long)
+POST    /addProduct                 controllers.ProductsController.addProduct
+POST    /updateProduct              controllers.ProductsController.updateProduct
+
+# Orders page
+GET     /orders                     controllers.OrdersController.getOrders
+GET     /orderList                  controllers.OrdersController.index()
+GET     /orderListO                 controllers.OrdersController.indexOfStuff()
