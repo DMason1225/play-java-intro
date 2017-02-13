@@ -9,6 +9,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 import static play.libs.Json.toJson;
@@ -39,6 +40,7 @@ public class CategoriesController extends Controller
     {
         List<Categories> categories = (List<Categories>) jpaApi.em().
                 createQuery("select c from Categories c").getResultList();
+
         return ok(views.html.catagories.render(categories));
     }
 
@@ -85,8 +87,6 @@ public class CategoriesController extends Controller
         //Copy the form values out into local variables
         Long categoryId = new Long(postedForm.get("categoryId"));
         String categoryName = postedForm.get("categoryName");
-        String description = postedForm.get("description");
-
 
         //Get the model of the category we want to update
         Categories category = (Categories)jpaApi.em()
@@ -95,7 +95,6 @@ public class CategoriesController extends Controller
 
         //Copy new values into model
         category.categoryName = categoryName;
-        category.description = description;
 
         //Save the model to the database
         jpaApi.em().persist(category);
@@ -104,20 +103,16 @@ public class CategoriesController extends Controller
         return redirect(routes.CategoriesController.index());
     }
 
-    @Transactional(readOnly = true)
-    public Result getPicture(Long id)
-    {
-        Categories category = (Categories) jpaApi.em().
-                createQuery("select c from Categories c where categoryId = :id").
-                setParameter("id", id).getSingleResult();
 
-        if (category.picture == null)
-        {
-            return null;
-        }
-        else
-        {
-            return ok(category.picture).as("image/bmp");
-        }
+    //@BodyParser.Of(MyMultipartFormDataBodyParser.class)
+    public Result upload() throws IOException
+    {
+        //final Http.MultipartFormData<File> formData = request().body().asMultipartFormData();
+        //final Http.MultipartFormData.FilePart<File> filePart = formData.getFile("name");
+        //final File file = filePart.getFile();
+        //final long data = operateOnTempFile(file);
+        //return ok("file size = " + data + "");
+        return null;
     }
+
 }
