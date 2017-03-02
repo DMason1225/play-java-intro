@@ -1,0 +1,41 @@
+@(customers: List[Customers])
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h1>List of Customers</h1>
+
+<table>
+    <tr>
+        <th>Customer Id</th>
+        <th>Contact Name</th>
+        <th>Company Name</th>
+    </tr>
+    @for(customer <- customers) {
+    <tr>
+        <td>@customer.customerId</td>
+        <td>@customer.contactName</td>
+        <td>@customer.companyName</td>
+    </tr>
+    }
+</table>
+
+</body>
+</html>

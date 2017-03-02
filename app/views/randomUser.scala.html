@@ -1,0 +1,23 @@
+@(randomUser: RandomUser)
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<table>
+    <th>Results</th>
+    <th>Info</th>
+
+
+    @for(result<- randomUser.getResults) {
+    <tr>
+        <td>@result.getName.getFirst</td>
+        <td>@result.getName.getLast</td>
+    </tr>
+    }
+</table>
+
+</body>
+</html>
