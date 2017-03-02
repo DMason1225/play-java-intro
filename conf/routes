@@ -15,7 +15,6 @@ GET     /categories                 controllers.CategoriesController.getCategori
 GET     /categoriesList             controllers.CategoriesController.index()
 GET     /newCategory                controllers.CategoriesController.newCategory
 POST    /addCategory                controllers.CategoriesController.addCategory
-GET     /categoryPicture/:id        controllers.CategoriesController.getPicture(id:Long)
 GET     /editCategory/:id           controllers.CategoriesController.editCategory(id:Long)
 POST    /updateCategory             controllers.CategoriesController.updateCategory
 
@@ -40,3 +39,12 @@ POST    /updateProduct              controllers.ProductsController.updateProduct
 GET     /orders                     controllers.OrdersController.getOrders
 GET     /orderList                  controllers.OrdersController.index()
 GET     /orderListO                 controllers.OrdersController.indexOfStuff()
+
+
+#APIDemo
+GET     /rawjson                    controllers.APIDemo.getDemo()
+GET     /pojo                       controllers.APIDemo.getDemoPojo()
+GET     /pojoTree                   controllers.APIDemo.getDemoPojoTree()
+GET     /LatinDemo                  controllers.APIDemo.getLatinDemo()
+
+GET     /RandomUser                 controllers.APIDemo.getRandomUser()

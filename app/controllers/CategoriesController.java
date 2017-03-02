@@ -41,7 +41,7 @@ public class CategoriesController extends Controller
         List<Categories> categories = (List<Categories>) jpaApi.em().
                 createQuery("select c from Categories c").getResultList();
 
-        return ok(views.html.catagories.render(categories));
+        return ok(views.html.categories.render(categories));
     }
 
     @Transactional(readOnly = true)

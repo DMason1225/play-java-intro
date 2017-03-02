@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import javax.persistence.Id;
+
 
 @Entity
 public class Person {
